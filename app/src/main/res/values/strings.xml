@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">try</string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="eurorate">EURO RATE</string>
+    <string name="wonRate">wonrate</string>
+    <string name="dollarRate">dollar rate</string>
+    <string name="btn_add">add</string>
+    <string name="title_activity_add2">AddActivity2</string>
+    <string name="dollorRate">dollorRate</string>
+    <string name="setting">setting</string>
+    <string name="list">list</string>
+    <string name="keyword">keyword</string>
+    <string name="search">search</string>
+</resources>

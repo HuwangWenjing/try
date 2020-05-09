@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+
+    <EditText
+        android:id="@+id/editDollar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/dollorRate"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginBottom="6dp"
+        />
+
+    <EditText
+        android:id="@+id/editEuro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/eurorate"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginBottom="6dp"
+        />
+
+    <EditText
+        android:id="@+id/editWon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/wonRate"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginBottom="6dp"
+        />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="6dp"
+        android:onClick="save"
+        android:text="@string/btn_add" />
+</LinearLayout>
