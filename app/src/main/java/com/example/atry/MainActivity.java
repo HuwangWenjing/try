@@ -157,11 +157,11 @@ public class MainActivity extends AppCompatActivity implements Runnable{
         startActivityForResult(add, 1);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.rate,menu);
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.rate_menu,menu);
+        return true;
+    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements Runnable{
             openAdd();
         }else if(item.getItemId() == R.id.btn_list){
             //打开列表窗口
-            Intent list = new Intent(this,RateListActivity.class);
+            Intent list = new Intent(this,MyList2.class);
             startActivity(list);
         }
         return super.onOptionsItemSelected(item);

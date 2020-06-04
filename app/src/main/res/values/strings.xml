@@ -11,4 +11,5 @@
     <string name="list">list</string>
     <string name="keyword">keyword</string>
     <string name="search">search</string>
+    <string name="title_activity_my_adapter">MyAdapter</string>
 </resources>

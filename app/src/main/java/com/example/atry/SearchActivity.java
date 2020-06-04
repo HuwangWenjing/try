@@ -159,15 +159,6 @@ public class SearchActivity extends AppCompatActivity implements Runnable, Filte
 
     }
 
-    //onClick里要写搜索按钮btn_search的操作代码
-//    public void onClick(View btn) {
-//        keyword = (EditText) findViewById(R.id.keyword);
-//        if (keyword != null && list2.contains(keyword)) {
-//
-//        } else {
-//            Toast.makeText(SearchActivity.this, "请输入关键字", Toast.LENGTH_SHORT).show();
-//        }
-//    }
 
     @Override
     public void run() {

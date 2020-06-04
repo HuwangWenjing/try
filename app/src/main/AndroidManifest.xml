@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".RateCalc"></activity>
+        <activity
+            android:name=".MyAdapter"
+            android:label="@string/title_activity_my_adapter"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MyList2" />
+        <activity android:name=".SearchActivity" />
         <activity android:name=".RateListActivity" />
         <activity android:name=".AddActivity" />
         <activity android:name=".MainActivity">
