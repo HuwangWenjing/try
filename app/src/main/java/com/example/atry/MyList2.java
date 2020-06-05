@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ListAdapter;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -28,7 +30,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MyList2 extends AppCompatActivity implements  Runnable{
+public class MyList2 extends AppCompatActivity implements  Runnable,AdapterView.OnItemClickListener,AdapterView.OnItemLongClickListener{
 
     Handler handler;
     private ArrayList<HashMap<String,String>> listItems;
@@ -56,7 +58,7 @@ public class MyList2 extends AppCompatActivity implements  Runnable{
                             new String[]{"ItemTitle","ItemDetail"},
                             new int[]{R.id.itemTitle,R.id.itemDetail}
                     );
-                    setListAdapter(listItemAdapter);
+                    //setListAdapter(listItemAdapter);
                 }
                 super.handleMessage(msg);
             }
@@ -67,6 +69,7 @@ public class MyList2 extends AppCompatActivity implements  Runnable{
 
             }
         });
+
     }
 
     private AdapterView getListView() {
@@ -155,4 +158,25 @@ public class MyList2 extends AppCompatActivity implements  Runnable{
         startActivity(rateCalc);
     }
 
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+        Log.i(TAG,"onItemLongClick: 长按position" + position);
+//        listItems.remove(position);
+//        listItemAdapter.notifyDataSetChanged();
+        //构造对话框进行确认操作
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("提示").setMessage("请确认是否删除").setPositiveButton("是", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Log.i(TAG, "onClick: 对话框处理");
+                listItems.remove(position);
+                listItemAdapter.notifyDataSetChanged();
+            }
+        })
+                .setNegativeButton("否",null);
+        builder.create().show();
+        Log.i(TAG,"onItemLongClick:" + listItems);
+
+        return false;
+    }
 }

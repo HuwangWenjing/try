@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RateCalc"></activity>
+        <activity android:name=".MyList"></activity>
+        <activity android:name=".RateCalc" />
         <activity
             android:name=".MyAdapter"
             android:label="@string/title_activity_my_adapter"
