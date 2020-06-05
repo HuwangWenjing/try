@@ -29,6 +29,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -169,8 +170,20 @@ public class MainActivity extends AppCompatActivity implements Runnable{
             openAdd();
         }else if(item.getItemId() == R.id.btn_list){
             //打开列表窗口
-            Intent list = new Intent(this,MyList2.class);
-            startActivity(list);
+//            Intent list = new Intent(this,MyList2.class);
+//            startActivity(list);
+            //测试数据库
+            RateItem item1= new RateItem("cbd","353");
+            RateManager manager = new RateManager(this);
+            manager.add(item1);
+            manager.add(new RateItem("fbfv","123"));
+            Log.i(TAG, "onOptionsItemSelected: 已写入数据");
+
+            //查询所有数据
+            List<RateItem> testList = manager.listAll();
+            for(RateItem i : testList) {
+                Log.i(TAG, "onOptionsItemSelected: 取出数据Name = " + i.getCurName() + "Rate = " + i.getCurRate());
+            }
         }
         return super.onOptionsItemSelected(item);
     }
@@ -284,5 +297,5 @@ public class MainActivity extends AppCompatActivity implements Runnable{
         startActivity(search);
     }
 
-
+//
 }
