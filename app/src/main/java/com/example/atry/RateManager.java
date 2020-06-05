@@ -64,4 +64,20 @@ public class RateManager {
         db.delete(TBNAME,null,null);
         db.close();
     }
+
+    public RateItem findById(int id) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.query(TBNAME, null,"ID=?",new String[]{String.valueOf(id)},null,
+        null,null);
+        RateItem rateItem = null;
+        if(cursor != null && cursor.moveToFirst()) {
+            rateItem = new RateItem();
+            rateItem.setId(cursor.getInt(cursor.getColumnIndex("ID")));
+            rateItem.setCurName(cursor.getString(cursor.getColumnIndex("CURNAME")));
+            rateItem.setCurRate(cursor.getString(cursor.getColumnIndex("CURRATE")));
+            cursor.close();
+        }
+        db.close();
+        return rateItem;
+    }
 }
